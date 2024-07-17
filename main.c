@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/06/30 18:15:33 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/17 11:32:39 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,30 @@ void    print_stack(t_stack *stack)
         printf("%d ", current->value);
         current = current->next;
     }
-    print_stack("\n")
+    printf("\n");
 }
 
-int main(int argc char **argv)
+int main(int argc, char **argv)
 {
     if (argc < 2)
     {
-        printf("Usage: %s <list of integers>\n", argv[0]);
+        printf("Incorrect number of arguments provided\n");
         return (1);
     }
 
-    t_stack *stack = init_stack(void);
+    t_stack *stack = init_stack();
     if (!stack)
     {
         printf("Error initializing stack\n");
         return (1);
     }
 
-    int 1 = 0;
-    while(1 < argc)
+    int i = 0;
+    while(i < argc)
     {
         int value = atoi(argv[i]);
-        push(stack, value); 
+        push(stack, value);
+        i++; 
     }
 
     printf("Initial stack: ");

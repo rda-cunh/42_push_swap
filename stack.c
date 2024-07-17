@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/06/30 17:50:44 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/17 11:23:53 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ t_stack	*init_stack(void)
 	return (stack);
 }
 
-//Push an Element onto the Stack (carefull: not from stack b)
+//Push an Element onto the Stack (carefull!: not from stack b)
 
 void	push(t_stack *stack, int value)
 {
 	t_node	*new_node = (t_node *)malloc(sizeof(t_node));
 	if (new_node == NULL)
-		return (NULL);
+		return ;
 	new_node->value = value;
-	new_node->top = new_node;
+	new_node->next = stack->top;
+	stack->top = new_node;
 	stack->size++;
 }
 
@@ -45,7 +46,7 @@ int	pop(t_stack *stack)
 		return (-1); 
 	t_node *temp = stack->top;
 	int value = temp->value;
-	stack->top = stacl->top->next;
+	stack->top = stack->top->next;
 	free(temp);
 	stack->size--;
 	return (value);
