@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/07/17 11:32:39 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:05:24 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int main(int argc, char **argv)
         return (1);
     }
 
-    int i = 0;
-    while(i < argc)
+    int i = argc - 1;
+    while(i > 0)
     {
         int value = atoi(argv[i]);
         push(stack, value);
-        i++; 
+        i--; 
     }
 
     printf("Initial stack: ");
