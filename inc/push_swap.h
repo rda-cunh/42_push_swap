@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/07/17 11:05:30 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:48:02 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-typedef struct s_node {
-    int value;
-    struct s_node *next;
-} t_node;
-
-typedef struct s_stack {
-    t_node *top;
-    int size;
-} t_stack; 
+typedef struct s_stack 
+{
+    long value;
+    int index; 
+    struct s_stack *next;
+    struct s_stack *prev; 
+} t_stack;
 
 t_stack	*init_stack(void);
 void	push(t_stack *stack, int value);
