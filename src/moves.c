@@ -6,12 +6,12 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/07/17 11:23:53 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:53:09 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "stack.h"
+#include "../inc/push_swap.h"
 
 // Initialize a Stack
 

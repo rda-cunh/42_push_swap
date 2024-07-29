@@ -6,13 +6,14 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/06/30 18:16:21 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/07/29 16:59:32 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = stack_test
+NAME = push_swap
 
-SRCS = main.c stack.c
+SRC_DIR	= ./src
+SRCS = main.c moves.c
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc
@@ -22,6 +23,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+
+%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

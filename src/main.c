@@ -6,13 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/07/17 13:05:24 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:52:56 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
+#include "../inc/push_swap.h"
 
 void    print_stack(t_stack *stack)
 {
