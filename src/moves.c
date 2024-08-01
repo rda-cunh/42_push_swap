@@ -13,18 +13,6 @@
 #include <stdlib.h>
 #include "../inc/push_swap.h"
 
-// Initialize a Stack
-
-t_stack	*init_stack(void)
-{
-	t_stack	*stack = (t_stack *)malloc(sizeof(t_stack));
-	if (stack == NULL)
-		return (NULL);
-	stack->top = NULL;
-	stack->size = 0;
-	return (stack);
-}
-
 //Push an Element onto the Stack (carefull!: not from stack b)
 
 void	push(t_stack *stack, int value)
