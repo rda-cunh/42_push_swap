@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/07/29 16:52:56 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/07 23:10:26 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 #include <stdlib.h>
 #include "../inc/push_swap.h"
 
-void    print_stack(t_stack *stack)
+void print_stack(t_stack *stack)
 {
-    t_node *current = stack->top;
-    while(current)
+    while (stack)
     {
-        printf("%d ", current->value);
-        current = current->next;
+        printf("Value: %ld, index: %d\n", stack->value, stack->index);
+        stack = stack->next;
     }
-    printf("\n");
 }
 
 int main(int argc, char **argv)
@@ -33,41 +31,35 @@ int main(int argc, char **argv)
         return (1);
     }
 
-    t_stack *stack = init_stack();
-    if (!stack)
-    {
-        printf("Error initializing stack\n");
-        return (1);
-    }
-
-    int i = argc - 1;
-    while(i > 0)
+    t_stack *stack = NULL;
+    int i = 1;
+    while(i < argc)
     {
         int value = atoi(argv[i]);
-        push(stack, value);
-        i--; 
+        push(&stack, value, i - 1);
+        i++; 
     }
 
-    printf("Initial stack: ");
-    print_stack(stack); 
-
-    swap(stack);
-    printf("After swap: ");
-    print_stack(stack); 
-
-    rotate(stack);
-    printf("After rotate: ");
-    print_stack(stack); 
-
-    reverse_rotate(stack);
-    printf("After reverse rotate: ");
-    print_stack(stack); 
-
-    int popped_value = pop(stack);
-    printf("Popped value: %d\n", popped_value);
-    printf("After pop: ");
+    printf("Initial stack:\n");
     print_stack(stack);
 
-    free_stack(stack);
+    swap(&stack);
+    printf("After swap:\n");
+    print_stack(stack);
+
+    rotate(&stack);
+    printf("After rotate:\n");
+    print_stack(stack);
+
+    reverse_rotate(&stack);
+    printf("After reverse rotate:\n");
+    print_stack(stack);
+
+    pop(&stack);
+    printf("After pop:\n");
+    print_stack(stack);
+
+    free_stack(&stack);
     return (0);
 }
+
