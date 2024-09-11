@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/10 00:10:50 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:30:58 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,14 +105,4 @@ void	reverse_rotate(t_stack **top)
 	*top = last; 
 }
 
-//Free the Stack
 
-void	free_stack(t_stack **top)
-{
-	while (*top != NULL)
-	{
-		t_stack *temp = *top;
-		*top = (*top)->next;
-		free(temp);
-	}
-}

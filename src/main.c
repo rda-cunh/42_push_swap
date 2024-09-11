@@ -6,60 +6,47 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/07 23:10:26 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:28:45 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "../inc/push_swap.h"
-
-void print_stack(t_stack *stack)
-{
-    while (stack)
-    {
-        printf("Value: %ld, index: %d\n", stack->value, stack->index);
-        stack = stack->next;
-    }
-}
 
 int main(int argc, char **argv)
 {
     if (argc < 2)
-    {
-        printf("Incorrect number of arguments provided\n");
         return (1);
-    }
-
-    t_stack *stack = NULL;
+    t_stack *sa = NULL;
+	t_stack *sb = NULL;
     int i = 1;
     while(i < argc)
     {
         int value = atoi(argv[i]);
-        push(&stack, value, i - 1);
+        push(&sa, value, i - 1);
         i++; 
     }
 
-    printf("Initial stack:\n");
-    print_stack(stack);
+    printf("Initial stack a:\n");
+    print_stack(sa);
 
-    swap(&stack);
+    swap(&sa);
     printf("After swap:\n");
-    print_stack(stack);
+    print_stack(sa);
 
-    rotate(&stack);
+    rotate(&sa);
     printf("After rotate:\n");
-    print_stack(stack);
+    print_stack(sa);
 
-    reverse_rotate(&stack);
+    reverse_rotate(&sa);
     printf("After reverse rotate:\n");
-    print_stack(stack);
+    print_stack(sa);
 
-    pop(&stack);
+    pop(&sa);
     printf("After pop:\n");
-    print_stack(stack);
+    print_stack(sa);
 
-    free_stack(&stack);
+    free_stack(&sa);
+	free_stack(&sb);
     return (0);
 }
 

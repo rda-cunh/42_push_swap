@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/10 00:20:35 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:32:18 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ typedef struct s_stack
 }	t_stack;
 
 //utils functions
+void	print_stack(t_stack *stack)
+void	free_stack(t_stack **top);
 
-
-//other functions
+//stack operations functions
 void	push(t_stack **top, long value, int index);
 long	pop(t_stack **top);
 void	swap(t_stack **top);
 void	rotate(t_stack **top);
 void	reverse_rotate(t_stack **top);
-void	free_stack(t_stack **top);
 
 #endif
