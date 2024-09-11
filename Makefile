@@ -6,7 +6,7 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/09/10 00:14:15 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/09/12 00:50:30 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,22 +16,31 @@ SRC_DIR	= ./src
 SRCS = main.c operations.c utils.c
 OBJS = $(SRCS:.c=.o)
 
+LIBFT = ./libft/libft.a
+LIBFTDIR = ./libft
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) 
 
-%.o: $(SRC_DIR)/%.c
+$(LIBFT): $(LIBFTDIR)
+	$(MAKE) -C ${LIBFTDIR}
+
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	$(MAKE) clean -C $(LIBFTDIR)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(MAKE) fclean -C $(LIBFTDIR)
+	$(RM) $(NAME)
 
 re: fclean all
 

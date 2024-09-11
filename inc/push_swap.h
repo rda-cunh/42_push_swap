@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/11 15:32:18 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:35:56 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 }	t_stack;
 
 //utils functions
-void	print_stack(t_stack *stack)
+void	print_stack(t_stack *stack);
 void	free_stack(t_stack **top);
 
 //stack operations functions
