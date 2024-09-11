@@ -6,14 +6,14 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/07/29 16:59:32 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/09/10 00:14:15 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC_DIR	= ./src
-SRCS = main.c moves.c
+SRCS = main.c operations.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc

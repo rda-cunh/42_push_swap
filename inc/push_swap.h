@@ -6,21 +6,30 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/07 23:08:12 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/10 00:20:35 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-typedef struct s_stack 
+# include <stdio.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
+
+// define linked list node structure
+typedef struct s_stack
 {
-    long value;
-    int index; 
-    struct s_stack *next;
-    struct s_stack *prev; 
-} t_stack; 
+	long			value;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
+//utils functions
+
+
+//other functions
 void	push(t_stack **top, long value, int index);
 long	pop(t_stack **top);
 void	swap(t_stack **top);
