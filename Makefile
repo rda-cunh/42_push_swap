@@ -6,14 +6,14 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/09/12 01:05:26 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/09/12 14:58:24 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC_DIR	= ./src
-SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/operations.c $(SRC_DIR)/utils.c
+SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/operations.c $(SRC_DIR)/utils_stack.c $(SRC_DIR)/utils_split.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = ./libft/libft.a
