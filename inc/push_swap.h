@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/12 01:20:49 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:04:48 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h> //to remove later
-# include <stdlib.h> //to remove later
+# include <stdlib.h> 
 # include <stdbool.h>
 # include <limits.h> 
 # include "../libft/libft.h"
 
-// define linked list node structure
+//linked list node structure
 typedef struct s_stack
 {
 	long			value;
@@ -29,8 +29,11 @@ typedef struct s_stack
 }	t_stack;
 
 //utils functions
+
 void	print_stack(t_stack *stack);
 void	free_stack(t_stack **top);
+
+char **split(char *s, char c);
 
 //stack operations functions
 void	push(t_stack **top, long value, int index);

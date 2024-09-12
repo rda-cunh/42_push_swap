@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/12 14:47:22 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/12 21:59:00 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		return (1);
 	else if (argc == 2)
 		argv = ft_spit(argv[1], ' ');
-	init_stack(&a, argc, argv);
+	init_stack(&a, argv + 1);
 
 //to remove after testing
     ft_printf("Initial stack a:\n");
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 //to remove after testing
     ft_printf("Final stack a:\n");
     print_stack(a);
-
+*/
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

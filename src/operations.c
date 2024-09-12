@@ -6,27 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/11 15:30:58 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/12 22:40:47 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-//Push an Element onto the Stack (carefull!: not from stack b)
 
-void	push(t_stack **top, long value, int index)
-{
-	t_stack	*new_node = (t_stack *)malloc(sizeof(t_stack));
-	if (new_node == NULL)
-		return ;
-	new_node->value = value;
-	new_node->index = index; 
-	new_node->next = *top;
-	new_node->prev = NULL; 
-	if (*top != NULL)
-		(*top)->prev = new_node;
-	*top = new_node; 
-}
 
 //Pop an Element from the Stack
 
