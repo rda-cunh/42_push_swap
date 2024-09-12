@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/11 17:00:27 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/12 01:48:06 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,37 @@
 
 int main(int argc, char **argv)
 {
-	t_stack	*sa;
-	t_stack	*sb;
+	t_stack	*a;
+	t_stack	*b;
 
-	sa = NULL;
-	sb = NULL;
-	if (argc < 2)
+	a = NULL;
+	b = NULL;
+	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
 		return (0);
-	//missing introduce a function to check arguments for errors
+	else if (argc == 2)
+		argv = ft_spit(argv[1], ' ');
+	init_stack(&a, argc, argv);
 
-	//missing function to handle both cases "command line arguments or a splited string"
-
-	//add numbers to our stack a
-    int i = argc - 1;
-	while(i > 0)
-	{
-    	int value = atoi(argv[i]);
-        push(&sa, value, argc - i - 1);
-        i--; 
-    }
-
+//to remove after testing
     ft_printf("Initial stack a:\n");
-    print_stack(sa);
+    print_stack(a);
 
-	//missing checking if the 
+	if (stack_sorted(a) == 0)
+	{
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_turk(&a, &b);
+	}
 
-    free_stack(&sa);
-	free_stack(&sb);
-    return (0);
+//to remove after testing
+    ft_printf("Final stack a:\n");
+    print_stack(a);
+
+	free_stack(&a);
+	free_stack(&b);
+	return (0);
 }
 

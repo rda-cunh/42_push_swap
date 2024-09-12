@@ -6,15 +6,17 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/11 15:35:56 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/12 01:20:49 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-# include <stdlib.h>
+# include <stdio.h> //to remove later
+# include <stdlib.h> //to remove later
+# include <stdbool.h>
+# include <limits.h> 
 # include "../libft/libft.h"
 
 // define linked list node structure
