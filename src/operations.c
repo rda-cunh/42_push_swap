@@ -6,11 +6,23 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/12 22:40:47 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/14 02:31:42 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+// push a and push b (pa/pb)
+
+static void	*push(t_stack **dst, t_stack **src)
+{
+	t_stack *push_node;
+
+	if (!*src)
+		return ; 
+	push_node = *src;
+	*src = (*src)->next;
+}
 
 
 

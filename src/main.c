@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/12 21:59:00 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/14 02:18:38 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
 		return (1);
 	else if (argc == 2)
-		argv = ft_spit(argv[1], ' ');
+		argv = split(argv[1], ' ');
 	init_stack(&a, argv + 1);
 
 //to remove after testing

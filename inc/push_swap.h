@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/12 21:04:48 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:45:10 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,14 @@ typedef struct s_stack
 
 //utils functions
 
+void	init_stack(t_stack **a, char **argv);
+
 void	print_stack(t_stack *stack);
 void	free_stack(t_stack **top);
+t_stack	*find_last(t_stack *stack);
+void	free_errors(t_stack **a);
 
-char **split(char *s, char c);
+char	**split(char *s, char c);
 
 //stack operations functions
 void	push(t_stack **top, long value, int index);
