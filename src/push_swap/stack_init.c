@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_stack.c                                      :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 00:07:13 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/14 01:46:55 by rda-cunh         ###   ########.fr       */
+/*   Created: 2024/09/15 19:15:20 by rda-cunh          #+#    #+#             */
+/*   Updated: 2024/09/15 19:15:49 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-//initialize a stack
 
 static long	ft_atol(const char *s)
 {
@@ -78,50 +76,3 @@ void	init_stack(t_stack **a, char **argv)
 		i++;
 	}
 }
-
-//find the last node of the list
-
-t_stack	*find_last(t_stack *stack)
-{
-	if (stack == NULL)
-		return (NULL);
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
-
-//print a stack
-
-void print_stack(t_stack *stack)
-{
-    while (stack)
-    {
-        printf("Value: %ld, index: %d\n", stack->value, stack->index);
-        stack = stack->next;
-    }
-}
-
-//free a stack
-void	free_stack(t_stack **top)
-{
-	t_stack	*temp;
-
-	while (*top != NULL)
-	{
-		temp = *top;
-		*top = (*top)->next;
-		free(temp);
-	}
-}
-
-//handle errors
-void	free_errors(t_stack **a)
-{
-	free_stack(a);
-	ft_printf("Error\n");
-	exit(1);
-}
-
-//check errors on function arguments (syntax and duplicates)
-
-
