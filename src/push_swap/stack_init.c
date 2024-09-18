@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:15:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/15 19:15:49 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/19 00:42:20 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ void	init_stack(t_stack **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-//		if (error_syntax(argv[i]))
-//			free_errors(a);
+		if (error_syntax(argv[i]))
+			free_errors(a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
-//		if (error_duplicate(*a, (int)n))
-//			free_errors(a);
+		if (error_duplicate(*a, (long)n))
+			free_errors(a);
 		push_node(a, n);
 		i++;
 	}
