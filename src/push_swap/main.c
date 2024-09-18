@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/14 02:18:38 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/19 00:44:13 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ int main(int argc, char **argv)
 		else
 			sort_turk(&a, &b);
 	}
-
-//to remove after testing
-    ft_printf("Final stack a:\n");
-    print_stack(a);
-*/
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
