@@ -44,7 +44,7 @@ void	free_stack(t_stack **stack);
 int		error_duplicate(t_stack *a, int n);
 int		error_syntax(char *str);
 
-//utils functions
+//stack utils functions
 t_stack	*find_last(t_stack *stack);
 void	print_stack(t_stack *stack);
 long	pop(t_stack **top);
@@ -61,5 +61,15 @@ void	rr(t_stack **a, t_stack **b, bool print);
 void	rra(t_stack **a, bool print);
 void	rrb(t_stack **b, bool print);
 void	rrr(t_stack **a, t_stack **b, bool print);
+
+//sort functions
+
+//sort utils functions
+bool	stack_sorted(t_stack *stack);
+int		stack_len(t_stack *stack);
+t_stack	*find_max(t_stack *stack);
+
+
+
 
 #endif

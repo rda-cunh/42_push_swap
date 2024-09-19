@@ -13,7 +13,9 @@
 NAME = push_swap
 
 SRC_DIR	= ./src
-SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/operations.c $(SRC_DIR)/utils_stack.c $(SRC_DIR)/utils_split.c
+SRCS = error_handling.c input_parsing.c main.c op_push.c op_swap.c \
+		op_rotate.c op_rev_rotate.c sort_three.c sort_turk.c sort_utils.c \
+		stack_init.c stack_utils.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = ./libft/libft.a
