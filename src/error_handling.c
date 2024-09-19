@@ -57,6 +57,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+//must review the functions to free the stack in case of one argument and the use of split functions
 void	free_errors(t_stack **a)
 {
 	free_stack(a);
