@@ -15,9 +15,9 @@
 //check if the stack is sorted
 bool	stack_sorted(t_stack *stack)
 {
-	if (stack == NULL)
+	if (!stack)
 		return (1);
-	while (stack->next != NULL)
+	while (stack->next)
 	{
 		if (stack->value > stack->next->value)
 			return (false);
