@@ -6,91 +6,83 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:59:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:28:19 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:34:27 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static int	count_words(char *s, char c)
+static int	count_words(char *str, char sep)
 {
-	int		count;
-	bool	inside_word;
+	int	i;
+	int	words;
 
-	count = 0;
-	while (*s)
+	i = 0;
+	words = 0;
+	while (str[i])
 	{
-		inside_word = false;
-		while (*s == c)
-			++s;
-		while (*s != c && *s)
+		while (str[i] && str[i] == sep)
+			i++;
+		if (str[i])
+			words++;
+		while (str[i] && str[i] != sep)
+			i++;
+	}
+	return (words);
+}
+
+static char	*ft_strcpy(char *s1, char *s2, int n)
+{
+	int	i;
+
+	i = 0;
+	s1 = (char *)malloc(sizeof(char) * (n + 1));
+	if (!s1)
+		return (NULL);
+	while (s2[i] && i < n)
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
+
+static char	**res_init(char *str, char sep)
+{
+	char	**res;
+
+	res = (char **)malloc(sizeof(char *) * (count_words(str, sep) + 2));
+	if (!res)
+		return (NULL);
+	res[0] = ft_strcpy(res[0], "a.out", 5);
+	return (res);
+}
+
+char	**split(char *str, char sep)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**res;
+
+	i = 0;
+	j = 0;
+	k = 1;
+	res = res_init(str, sep);
+	while (str[i])
+	{
+		while (str[i] && str[i] == sep)
+			i++;
+		j = i;
+		while (str[i] && str[i] != sep)
+			i++;
+		if (i > j)
 		{
-			if (!inside_word)
-			{
-				++count;
-				inside_word = true;
-			}
-			++s;
+			res[k] = ft_strcpy(res[k], &str[j], i - j);
+			k++;
 		}
 	}
-	return (count);
-}
-
-static char	*get_next_word(char *s, char c, int *cursor)
-{
-	int		len;
-	int		i;
-	char	*next_word;
-
-	len = 0;
-	while (s[*cursor] == c)
-		(*cursor)++;
-	while (s[*cursor + len] && s[*cursor + len] != c)
-		len++;
-	next_word = (char *)malloc(len + 1);
-	if (!next_word)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		next_word[i] = s[(*cursor)];
-		i++;
-		(*cursor)++;
-	}
-	next_word[i] = '\0';
-	return (next_word);
-}
-
-static char	**free_result_array(char **result_array, int i)
-{
-	while (--i >= 0)
-		free(result_array[i]);
-	free(result_array);
-	return (NULL);
-}
-
-char	**split(char *s, char c)
-{
-	int		word_count;
-	char	**result_array;
-	int		cursor;
-	int		i;
-
-	word_count = count_words(s, c);
-	if (!s || word_count == 0)
-		return (NULL);
-	result_array = malloc((word_count + 1) * sizeof(char *));
-	if (!result_array)
-		return (NULL);
-	cursor = 0;
-	i = 0;
-	while (i < word_count)
-	{
-		result_array[i] = get_next_word(s, c, &cursor);
-		if (!result_array[i])
-			return (free_result_array(result_array, i));
-		i++;
-	}
-	result_array[i] = NULL;
-	return (result_array);
+	res[k] = NULL;
+	return (res);
 }

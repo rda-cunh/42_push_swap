@@ -6,27 +6,11 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 00:10:02 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 18:31:59 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 00:55:08 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
-{
-	while (*b != cheapest_node->target_node && *a != cheapest_node)
-		rr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}
-
-static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack*cheapest_node)
-{
-	while (*b != cheapest_node->target_node && *a != cheapest_node)
-		rrr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}
 
 static void	move_a_to_b(t_stack **a, t_stack **b)
 {
@@ -70,7 +54,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		pb(b, a, false);
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, false);
-	while (len_a > 3 && !stack_sorted(*a))
+	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		init_nodes_a(*a, *b);
 		move_a_to_b(a, b);

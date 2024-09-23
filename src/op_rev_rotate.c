@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 18:55:11 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 17:14:34 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 00:52:58 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,12 @@ void	rrr(t_stack **a, t_stack **b, bool print)
 	rev_rotate(b);
 	if (!print)
 		ft_printf("rrr\n");
+}
+
+void	rev_rotate_both(t_stack **a, t_stack **b, t_stack*cheapest_node)
+{
+	while (*b != cheapest_node->target_node && *a != cheapest_node)
+		rrr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }

@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 16:48:12 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 00:58:58 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	main(int argc, char **argv)
 	free_stack(&b);
 	return (0);
 }
-

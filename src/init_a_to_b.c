@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 00:10:26 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 17:01:26 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 00:17:20 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 	while (a)
 	{
 		a->push_cost = a->index;
-		if (!a->above_median)
+		if (!(a->above_median))
 			a->push_cost = len_a - (a->index);
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
