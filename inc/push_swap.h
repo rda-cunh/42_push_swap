@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/19 00:42:40 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:08:35 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	init_stack(t_stack **a, char **argv);
 char	**split(char *s, char c);
 
 //nodes initialization
+void	init_nodes_a(t_stack *a, t_stack *b);
+void	set_cheapest(t_stack *stack);
+void	current_index(t_stack *stack);
+void	init_nodes_b(t_stack *a, t_stack b*);
+
 
 //error handling
 void	free_errors(t_stack **a);
@@ -63,6 +68,8 @@ void	rrb(t_stack **b, bool print);
 void	rrr(t_stack **a, t_stack **b, bool print);
 
 //sort functions
+void	sort_three(t_stack **a);
+void	sort_stacks(t_stack **a, t_stack **b);
 
 //sort utils functions
 bool	stack_sorted(t_stack *stack);

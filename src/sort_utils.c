@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:54:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/14 02:25:22 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:19:59 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	stack_len(t_stack *stack)
 //search a stack and finds the node with the biggest number
 t_stack	*find_max(t_stack *stack)
 {
-	long	max; 
-	t_stack	*max_node; 
+	long	max;
+	t_stack	*max_node;
 
 	if (!stack)
 		return (NULL);
@@ -64,22 +64,22 @@ t_stack	*find_max(t_stack *stack)
 }
 
 //search a stack and finds the node with the smallest number
-t_stack *find_min(t_stack *stack)
+t_stack	*find_min(t_stack *stack)
 {
 	long	min;
-	t_stack	*min_node; 
+	t_stack	*min_node;
 
 	if (!stack)
 		return (NULL);
-	min = LONG_MAX; 
+	min = LONG_MAX;
 	while (stack)
 	{
 		if (stack->value < min)
 		{
 			min = stack->value;
-			min_node = stack; 
+			min_node = stack;
 		}
-		stack = stack->next; 
+		stack = stack->next;
 	}
-	return (min_node); 
+	return (min_node);
 }

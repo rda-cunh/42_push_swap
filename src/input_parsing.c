@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:59:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/16 23:09:28 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:28:19 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*get_next_word(char *s, char c, int *cursor)
 		(*cursor)++;
 	while (s[*cursor + len] && s[*cursor + len] != c)
 		len++;
-	next_word = malloc(len + 1);
+	next_word = (char *)malloc(len + 1);
 	if (!next_word)
 		return (NULL);
 	i = 0;

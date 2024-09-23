@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_rotate.c                                       :+:      :+:    :+:   */
+/*   op_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 18:55:11 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/15 19:04:27 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:53:19 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	rev_rotate(t_stack **stack)
 	last->prev->next = NULL;
 	last->next = *stack;
 	last->prev = NULL;
-	*stack = last;
-	last->next->prev = last;
+	*stack = last_node;
+	last->next->prev = last_node;
 }
 
 void	rra(t_stack **a, bool print)

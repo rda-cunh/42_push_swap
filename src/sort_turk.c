@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 00:10:02 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 00:25:08 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:55:08 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	min_on_top(t_stack *a)
 		if (find_min(*a)->above_median)
 			ra(a, false);
 		else
-			rra(a, false); 
+			rra(a, false);
 	}
 }
 
@@ -42,7 +42,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		init_nodes_b(*a, *b);
-		move_b_to_a(a, b); 
+		move_b_to_a(a, b);
 	}
 	current_index(*a);
 	min_on_top(a);

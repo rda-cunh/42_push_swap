@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:29:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/19 00:41:52 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:36:29 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	error_syntax(char *str)
 {
 	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
-		returnv(1);
-	if ((*str_n == '+' || *str == '-') && !(str[1] >= '0' && str[1] <= '9'))
+		return (1);
+	if ((*str == '+' || *str == '-') && !(str[1] >= '0' && str[1] <= '9'))
 		return (1);
 	while (*++str)
 	{
@@ -39,28 +39,40 @@ int	error_duplicate(t_stack *a, int n)
 	return (0);
 }
 
+void	free_argv_split(char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (!argv)
+		return ;
+	while (argv[i])
+		free(argv[i++]);
+	free(argv);
+}
+
 void	free_stack(t_stack **stack)
 {
 	t_stack	*current;
 	t_stack	*temp;
 
-	if (!stack)
+	if (!stack || !*stack)
 		return ;
 	current = *stack;
 	while (current)
 	{
 		temp = current->next;
-		current->nbr = 0;
 		free(current);
 		current = temp;
 	}
 	*stack = NULL;
 }
 
-//must review the functions to free the stack in case of one argument and the use of split functions
-void	free_errors(t_stack **a)
+void	free_errors(t_stack **a, char **argv; int argc)
 {
 	free_stack(a);
+	if (argc == 2)
+		free_argv_split(argv);
 	ft_printf("Error\n");
 	exit(1);
 }
