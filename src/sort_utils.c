@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:54:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 18:08:52 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 22:12:59 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	stack_len(t_stack *stack)
 	int	count;
 
 	if (stack != NULL)
-		return (NULL);
+		return (0);
 	count = 0;
 	while (stack != NULL)
 	{

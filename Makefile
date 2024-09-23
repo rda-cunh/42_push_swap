@@ -6,7 +6,7 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/09/23 16:59:08 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/09/23 22:14:47 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ LIBFTDIR = ./libft
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
-
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
