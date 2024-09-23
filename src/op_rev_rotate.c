@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 18:55:11 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:53:19 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:14:34 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	rev_rotate(t_stack **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	last = find_last(stack);
-	last->prev->next = NULL;
-	last->next = *stack;
-	last->prev = NULL;
+	last_node = find_last(*stack);
+	last_node->prev->next = NULL;
+	last_node->next = *stack;
+	last_node->prev = NULL;
 	*stack = last_node;
-	last->next->prev = last_node;
+	last_node->next->prev = last_node;
 }
 
 void	rra(t_stack **a, bool print)

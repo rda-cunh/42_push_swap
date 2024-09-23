@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 00:10:39 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:54:18 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:15:16 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	sort_three(t_stack **a)
 		ra(a, false);
 	else if ((*a)->next == biggest_node)
 		rra(a, false);
-	if ((*a)->nbr > (*a)->next->nbr)
+	if ((*a)->value > (*a)->next->value)
 		sa(a, false);
 }

@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 00:10:26 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 13:15:43 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:01:26 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	set_target_a(t_stack *a, t_stack *b)
 			current_b = current_b->next;
 		}
 		if (best_match_index == LONG_MIN)
-			a->target_node = find_max_node(b);
+			a->target_node = find_max(b);
 		else
 			a->target_node = target_node;
 		a = a->next;

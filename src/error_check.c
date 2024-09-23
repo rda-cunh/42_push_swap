@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:33:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 15:33:42 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:58:17 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	error_duplicate(t_stack *a, int n)
 		return (0);
 	while (a)
 	{
-		if (a->nbr == n)
+		if (a->value == n)
 			return (1);
 		a = a->next;
 	}
@@ -68,7 +68,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	free_errors(t_stack **a, char **argv; int argc)
+void	free_errors(t_stack **a, char **argv, int argc)
 {
 	free_stack(a);
 	if (argc == 2)
