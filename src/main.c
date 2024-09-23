@@ -6,13 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:59:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:09:32 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:42:45 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;

@@ -6,17 +6,17 @@
 #    By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 18:16:18 by rda-cunh          #+#    #+#              #
-#    Updated: 2024/09/23 14:57:51 by rda-cunh         ###   ########.fr        #
+#    Updated: 2024/09/23 15:41:38 by rda-cunh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC_DIR	= ./src
-SRCS = error_handling.c init_a_to_b.c init_b_to_a.c input_parsing.c main.c \
-		op_push.c op_swap.c op_rotate.c op_rev_rotate.c sort_three.c \
-		sort_turk.c sort_utils.c stack_init.c stack_utils.c
-OBJS = $(SRCS:.c=.o)
+SRC_DIR	= src
+SRCS =  main.c error_check.c nit_a_to_b.c init_b_to_a.c input_parsing.c \
+	op_push.c op_swap.c op_rotate.c op_rev_rotate.c sort_three.c \
+	sort_turk.c sort_utils.c stack_init.c stack_utils.c
+OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 
 LIBFT = ./libft/libft.a
 LIBFTDIR = ./libft
