@@ -6,12 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:07:24 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:37:47 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:19:05 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//swap two first top numbers of a stack
 static void	swap(t_stack **head)
 {
 	if (*head == NULL || (*head)->next == NULL)
@@ -25,6 +26,7 @@ static void	swap(t_stack **head)
 	(*head)->prev = NULL;
 }
 
+//swap two first top numbers of stack a
 void	sa(t_stack **a, bool print)
 {
 	swap(a);
@@ -32,6 +34,7 @@ void	sa(t_stack **a, bool print)
 		ft_printf("sa\n");
 }
 
+//swap two first top numbers of stack b
 void	sb(t_stack **b, bool print)
 {
 	swap(b);
@@ -39,6 +42,7 @@ void	sb(t_stack **b, bool print)
 		ft_printf("sb\n");
 }
 
+//swap two first top numbers of stack a and b
 void	ss(t_stack **a, t_stack **b, bool print)
 {
 	swap(a);

@@ -6,12 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 00:10:26 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/24 00:17:20 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:15:17 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//sets the index and above median field (bool) for each node
 void	current_index(t_stack *stack)
 {
 	int	i;
@@ -33,6 +34,7 @@ void	current_index(t_stack *stack)
 	}
 }
 
+//find target node in b for each node of a
 static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*current_b;
@@ -61,6 +63,8 @@ static void	set_target_a(t_stack *a, t_stack *b)
 	}
 }
 
+//define the cost of the a node and it's target b node
+//sums the operations needed for both nodes to rotate to the top of stack 
 static void	cost_analysis_a(t_stack *a, t_stack *b)
 {
 	int	len_a;
@@ -81,6 +85,7 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 	}
 }
 
+//sets the 'cheapest' atribute for the node with lowest push cost (bool)
 void	set_cheapest(t_stack *stack)
 {
 	long	cheapest_value;
@@ -101,6 +106,7 @@ void	set_cheapest(t_stack *stack)
 	cheapest_node->cheapest = true;
 }
 
+//this function combines all functions to prepare stack a to sorted or pushed
 void	init_nodes_a(t_stack *a, t_stack *b)
 {
 	current_index(a);

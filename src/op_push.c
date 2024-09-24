@@ -6,13 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:34:04 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 14:37:31 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:17:31 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-// push a and push b (pa/pb)
+// push a node into the other stack (pa/pb)
 static void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*push_node;
@@ -37,6 +37,7 @@ static void	push(t_stack **dst, t_stack **src)
 	}
 }
 
+//push a node from stack b into stack a
 void	pa(t_stack **a, t_stack **b, bool print)
 {
 	push(a, b);
@@ -44,6 +45,7 @@ void	pa(t_stack **a, t_stack **b, bool print)
 		ft_printf("pa\n");
 }
 
+//push a node from stack a into stack b
 void	pb(t_stack **b, t_stack **a, bool print)
 {
 	push(b, a);

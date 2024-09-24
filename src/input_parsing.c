@@ -6,12 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:59:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 23:34:27 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:30:48 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//count number of words in the argument provided
 static int	count_words(char *str, char sep)
 {
 	int	i;
@@ -31,6 +32,7 @@ static int	count_words(char *str, char sep)
 	return (words);
 }
 
+//copies each number from the arg string to its position in array of strings
 static char	*ft_strcpy(char *s1, char *s2, int n)
 {
 	int	i;
@@ -48,6 +50,7 @@ static char	*ft_strcpy(char *s1, char *s2, int n)
 	return (s1);
 }
 
+//initualize and allocates memory for the array of strings
 static char	**res_init(char *str, char sep)
 {
 	char	**res;
@@ -59,6 +62,7 @@ static char	**res_init(char *str, char sep)
 	return (res);
 }
 
+//split argument provided (str) into an array of strings
 char	**split(char *str, char sep)
 {
 	int		i;

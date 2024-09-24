@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 15:33:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/24 10:27:10 by rda-cunh         ###   ########.fr       */
+/*   Created: 2024/09/15 15:33:25 by rda-cunh          #+#    #+#             */
+/*   Updated: 2024/09/24 12:12:57 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//checks syntax of arguments
 int	error_syntax(char *str)
 {
 	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
@@ -26,6 +27,7 @@ int	error_syntax(char *str)
 	return (0);
 }
 
+//search for duplicate numbers in the argument
 int	error_duplicate(t_stack *a, int n)
 {
 	if (!a)
@@ -39,6 +41,7 @@ int	error_duplicate(t_stack *a, int n)
 	return (0);
 }
 
+//memory free from the split array of strings 
 void	free_argv_split(char **argv)
 {
 	int	i;
@@ -51,6 +54,7 @@ void	free_argv_split(char **argv)
 	free(argv);
 }
 
+//free the stack 
 void	free_stack(t_stack **stack)
 {
 	t_stack	*current;
@@ -68,6 +72,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+//free memoryy and print "Error"
 void	free_errors(t_stack **a, char **argv, int argc)
 {
 	free_stack(a);

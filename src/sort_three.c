@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:10:39 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 17:15:16 by rda-cunh         ###   ########.fr       */
+/*   Created: 2024/09/15 00:10:39 by rda-cunh          #+#    #+#             */
+/*   Updated: 2024/09/24 12:14:44 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//function to sort three numbers
 void	sort_three(t_stack **a)
 {
 	t_stack	*biggest_node;

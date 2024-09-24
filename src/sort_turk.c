@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:10:02 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/24 00:55:08 by rda-cunh         ###   ########.fr       */
+/*   Created: 2024/09/19 00:10:02 by rda-cunh          #+#    #+#             */
+/*   Updated: 2024/09/24 15:14:28 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//prepares the cheapest node on top of a to push to b, leaving 3 nodes in a 
 static void	move_a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;
@@ -28,12 +29,14 @@ static void	move_a_to_b(t_stack **a, t_stack **b)
 	pb(b, a, false);
 }
 
+//prepares b nodes to push them back to stack a
 static void	move_b_to_a(t_stack **a, t_stack **b)
 {
 	prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b, false);
 }
 
+//function that moves the smallest number to the top
 static void	min_on_top(t_stack **a)
 {
 	while ((*a)->value != find_min(*a)->value)
@@ -45,6 +48,7 @@ static void	min_on_top(t_stack **a)
 	}
 }
 
+//function that sort stack a if it has more than 3 numbers
 void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	len_a;

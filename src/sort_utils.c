@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:54:48 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/24 00:56:58 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:05:09 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	stack_len(t_stack *stack)
 	return (count);
 }
 
-//search a stack and finds the node with the biggest number
+//search a stack and finds the node with the biggest value
 t_stack	*find_max(t_stack *stack)
 {
 	long	max;
@@ -49,7 +49,7 @@ t_stack	*find_max(t_stack *stack)
 	return (max_node);
 }
 
-//search a stack and finds the node with the smallest number
+//search a stack and finds the node with the smallest value
 t_stack	*find_min(t_stack *stack)
 {
 	long	min;
@@ -84,7 +84,7 @@ t_stack	*get_cheapest(t_stack *stack)
 	return (NULL);
 }
 
-//moves the required node (short number) to the top of the stack
+//moves the required node (minimum number) to the top of the stack
 void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
 {
 	while (*stack != top_node)

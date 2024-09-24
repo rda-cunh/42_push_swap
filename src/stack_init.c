@@ -6,12 +6,13 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:15:20 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 17:54:46 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:08:47 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+//convert each string argument into a long number
 static long	ft_atol(const char *s)
 {
 	long	result;
@@ -32,6 +33,7 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
+//allocate memory and creates every stack node
 static void	push_node(t_stack **stack, long value)
 {
 	t_stack	*new_node;
@@ -57,6 +59,7 @@ static void	push_node(t_stack **stack, long value)
 	}
 }
 
+//check for potencial errors and populate stack
 void	init_stack(t_stack **a, char **argv, int argc)
 {
 	long	n;
