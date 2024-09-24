@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:33:25 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 16:58:17 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:27:10 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ void	free_errors(t_stack **a, char **argv, int argc)
 	free_stack(a);
 	if (argc == 2)
 		free_argv_split(argv);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }

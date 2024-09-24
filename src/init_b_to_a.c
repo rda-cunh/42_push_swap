@@ -6,7 +6,7 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 10:31:44 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/23 13:22:31 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 11:21:07 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	set_target_b(t_stack *a, t_stack *b)
 		while (current_a)
 		{
 			if (current_a->value > b->value
-				&& current_a->value > best_match_index)
+				&& current_a->value < best_match_index)
 			{
 				best_match_index = current_a->value;
 				target_node = current_a;

@@ -6,14 +6,14 @@
 /*   By: rda-cunh <rda-cunh@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:57 by rda-cunh          #+#    #+#             */
-/*   Updated: 2024/09/24 00:58:09 by rda-cunh         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:26:40 by rda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> //to remove later
+# include <unistd.h>
 # include <stdlib.h> 
 # include <stdbool.h>
 # include <limits.h> 
